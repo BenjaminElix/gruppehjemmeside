@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,6 +13,46 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --white: #fff;
+}
+
+
+.site-header {
+  background-color: #1a1a1a;
+  padding: 0.75rem 2rem;
+}
+.header-inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 1.5rem;
+  color: var(--white);
+  font-weight: bold;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+.main-nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+.main-nav a:hover {
+  text-decoration: underline;
+}
+.divider {
+  color: rgba(255,255,255,0.5);
+  margin: 0 0.25rem;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -24,10 +64,67 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #242424;
+  color: rgba(255,255,255,0.87);
+}
+
+.main-container {
+  max-width: 1024px;
+  margin: 2rem auto; 
+  padding: 0 1rem;
+}
+
+.page-title,
+.arbeidslogg-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  background: var(--bg-white);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-content h2 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.card-content p {
+  margin: 0;
+  color: #555;
+  font-size: .95rem;
+}
+
+.arbeidslogg-section {
+  margin-top: 2rem;
 }
 
 h1 {
@@ -54,6 +151,16 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+.profile-header {
+  display: flex;
+}
+
+.profile-info {
+  margin-left: 1.5rem;
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -65,4 +172,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  
+ 
+
 }

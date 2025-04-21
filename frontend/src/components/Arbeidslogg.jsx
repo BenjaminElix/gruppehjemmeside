@@ -5,7 +5,7 @@ export default function Arbeidslogg({ entries }) {
   
     return (
       <div>
-        <h2>Arbeidslogg</h2>
+        <h2 className="arbeidslogg-title">Arbeidslogg</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr>
@@ -20,7 +20,7 @@ export default function Arbeidslogg({ entries }) {
               <tr
                 key={i}
                 style={{
-                  backgroundColor: i % 2 ? '#f9f9f9' : 'white'
+                  backgroundColor: i % 2 ? '#333232' : '#242424'
                 }}
               >
                 <td style={{ padding: '0.5rem' }}>

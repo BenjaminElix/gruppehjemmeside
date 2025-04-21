@@ -1,3 +1,4 @@
+// frontend/src/pages/Home.jsx
 import { useEffect, useState } from 'react'
 import { client, urlFor } from '../lib/sanity'
 import { Link } from 'react-router-dom'
@@ -21,40 +22,27 @@ export default function Home() {
   }, [])
 
   return (
-    <main style={{ padding: '1rem' }}>
-      <h1>Gruppemedlemmer</h1>
+    <main className="main-container">
+      <h1 className="page-title">Gruppemedlemmer</h1>
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(200px,1fr))',
-        gap: '1rem'
-      }}>
-        {members.map(m => (
-          <Link
-            key={m.slug}
-            to={`/member/${m.slug}`}
-            style={{
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-              padding: '0.5rem',
-              textDecoration: 'none',
-              color: 'inherit'
-            }}
-          >
-            {m.image && (
-              <img
-                src={urlFor(m.image).width(300).url()}
-                alt={m.name}
-                style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-              />
-            )}
-            <h2 style={{ margin: '0.5rem 0 0.25rem' }}>{m.name}</h2>
-            <p style={{ margin: 0 }}>{m.email}</p>
-          </Link>
-        ))}
+      <div className="card-grid">
+      {members.map(m => (
+  <div key={m.slug} className="card">
+    <Link to={`/member/${m.slug}`} className="card-link">
+      {m.image && <img className="card-img" src={urlFor(m.image).width(300).url()} alt={m.name} />}
+      <div className="card-content">
+        <h2>{m.name}</h2>
+      </div>
+    </Link>
+    <p className="email">
+      <a href={`mailto:${m.email}`}>{m.email}</a>
+    </p>
+  </div>
+))}
+
       </div>
 
-      <section style={{ marginTop: '2rem' }}>
+      <section className="arbeidslogg-section">
         <Arbeidslogg
           entries={members.flatMap(m =>
             (m.logs || []).map(l => ({ ...l, name: m.name }))
