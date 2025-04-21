@@ -1,4 +1,3 @@
-// frontend/src/pages/Home.jsx
 import { useEffect, useState } from 'react'
 import { client, urlFor } from '../lib/sanity'
 import { Link } from 'react-router-dom'
